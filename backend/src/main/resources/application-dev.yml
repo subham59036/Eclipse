@@ -1,17 +1,17 @@
 # File: backend/src/main/resources/application-dev.yml
 spring:
   datasource:
-    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/eclipse
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    url: jdbc:postgresql://localhost:5432/eclipse
+    username: eclipse
+    password: eclipse@1234567890
   jpa:
     hibernate:
       ddl-auto: validate
     show-sql: true
   data:
     redis:
-      host: ${REDIS_HOST}
-      port: ${REDIS_PORT}
+      host: localhost
+      port: 6379
 
 management:
   endpoints:

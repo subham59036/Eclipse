@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:18
+    image: postgres:18-alpine
     container_name: eclipse-postgres
     restart: unless-stopped
     mem_limit: 384m
@@ -11,12 +11,13 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql
 
   redis:
-    image: redis:8
+    image: redis:8-alpine
     container_name: eclipse-redis
     restart: unless-stopped
+    command: redis-server --save "" --appendonly no
     mem_limit: 128m
     ports:
       - "6379:6379"
