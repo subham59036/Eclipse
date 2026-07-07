@@ -1,5 +1,7 @@
-# File: backend/src/main/resources/application-dev.yml
 spring:
+  docker:
+    compose:
+      file: ../docker-compose.yml
   datasource:
     url: jdbc:postgresql://localhost:5432/eclipse
     username: eclipse
@@ -24,5 +26,5 @@ management:
 
 logging:
   level:
-    com.eclipse: DEBUG
-    org.springframework.web: DEBUG
+    "[com.eclipse]": DEBUG
+    "[org.springframework.web]": DEBUG

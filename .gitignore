@@ -1,0 +1,30 @@
+## Java / Maven
+target/
+*.class
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+*.log
+
+## Node / Vite (frontend, from Part 54 onward)
+node_modules/
+dist/
+.vite/
+npm-debug.log*
+
+## IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.iml
+
+## OS
+.DS_Store
+Thumbs.db
+
+## Environment / secrets
+.env
+.env.local
+
+## Docker
+docker-compose.override.yml
