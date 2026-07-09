@@ -65,7 +65,6 @@ public class Project extends BaseEntity implements Archivable {
         touch();
     }
 
-    // --- Archivable implementation (Part 7 §5.2) ---
 
     @Override
     public void archive() {
