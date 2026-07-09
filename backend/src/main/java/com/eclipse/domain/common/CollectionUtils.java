@@ -98,19 +98,15 @@ public final class CollectionUtils {
         return uniqueTasks.size() == tasks.size();
     }
 
-    public static Task topPriorityTask(List<Task> tasks) {
-        if (tasks == null || tasks.isEmpty()) {
+      public static Task topPriorityTask(List<Task> tasks) {
+      if (tasks == null || tasks.isEmpty()) {
             throw new IllegalArgumentException("tasks must not be null or empty");
-        }
-        PriorityQueue<Task> byPriorityDescending = new PriorityQueue<>(new Comparator<Task>() {
-            @Override
-            public int compare(Task a, Task b) {
-                return b.getPriority().getWeight() - a.getPriority().getWeight();
-            }
-        });
-        byPriorityDescending.addAll(tasks);
-        return byPriorityDescending.poll();
-    }
+      }
+      PriorityQueue<Task> byPriorityDescending =
+                  new PriorityQueue<>((a, b) -> b.getPriority().getWeight() - a.getPriority().getWeight());
+      byPriorityDescending.addAll(tasks);
+      return byPriorityDescending.poll();
+      }
 
     public static List<Task> reverseUsingStack(List<Task> tasks) {
         Deque<Task> stack = new ArrayDeque<>();
@@ -124,14 +120,9 @@ public final class CollectionUtils {
         return reversed;
     }
 
-    public static List<Task> sortedByPriorityDescending(List<Task> tasks) {
-        List<Task> copy = new ArrayList<>(tasks);
-        Collections.sort(copy, new Comparator<Task>() {
-            @Override
-            public int compare(Task a, Task b) {
-                return b.getPriority().getWeight() - a.getPriority().getWeight();
-            }
-        });
-        return Collections.unmodifiableList(copy);
-    }
+      public static List<Task> sortedByPriorityDescending(List<Task> tasks) {
+      List<Task> copy = new ArrayList<>(tasks);
+      Collections.sort(copy, (a, b) -> b.getPriority().getWeight() - a.getPriority().getWeight());
+      return Collections.unmodifiableList(copy);
+      }
 }
