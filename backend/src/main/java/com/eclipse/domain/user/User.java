@@ -1,4 +1,3 @@
-// File: backend/src/main/java/com/eclipse/domain/user/User.java
 package com.eclipse.domain.user;
 
 import com.eclipse.domain.common.BaseEntity;
